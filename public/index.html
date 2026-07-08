@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brock Legacy Construction | Quality Construction & Remodeling</title>
+  <meta name="description" content="Brock Legacy Construction provides dependable construction, remodeling, repairs, and renovation services. Request a quote today." />
+  <meta name="theme-color" content="#1f2a24" />
+
+  <style>
+    :root {
+      --green: #1f2a24;
+      --green-2: #314238;
+      --tan: #c8a86b;
+      --cream: #f7f2e8;
+      --paper: #fffdf8;
+      --ink: #1d1d1b;
+      --muted: #65625b;
+      --line: rgba(29, 29, 27, 0.12);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(31, 42, 36, 0.88);
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--tan);
+      color: var(--tan);
+      font-weight: 950;
+      border-radius: 12px;
+    }
+
+    .brand small {
+      display: block;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.76rem;
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: rgba(255, 255, 255, 0.84);
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .links a:hover { color: #fff; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 850;
+      border: 1px solid transparent;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--tan);
+      color: #17130b;
+      box-shadow: 0 12px 30px rgba(200, 168, 107, 0.24);
+    }
+
+    .btn-primary:hover { background: #d6b777; }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.08); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(200, 168, 107, 0.26), transparent 34%),
+        linear-gradient(135deg, var(--green), #111815);
+      color: #fff;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 82%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 52px;
+      align-items: center;
+      padding: 92px 0 96px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #f4d99d;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: var(--tan);
+    }
+
+    h1, h2, h3 { line-height: 1.05; margin: 0; }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.6rem);
+      max-width: 860px;
+      letter-spacing: -0.075em;
+    }
+
+    .hero p {
+      max-width: 660px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: clamp(1.08rem, 1.6vw, 1.28rem);
+      margin: 24px 0 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-placeholder {
+      min-height: 430px;
+      border-radius: calc(var(--radius) - 6px);
+      background:
+        linear-gradient(135deg, rgba(200,168,107,0.84), rgba(49,66,56,0.92)),
+        repeating-linear-gradient(45deg, transparent 0 12px, rgba(255,255,255,0.06) 12px 24px);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .photo-placeholder strong {
+      font-size: 1.45rem;
+      line-height: 1.15;
+    }
+
+    .photo-placeholder span {
+      display: block;
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 700;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      color: #fff;
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.82rem;
+      font-weight: 750;
+    }
+
+    section { padding: 82px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      letter-spacing: -0.055em;
+      color: var(--green);
+    }
+
+    .section-head p {
+      max-width: 480px;
+      color: var(--muted);
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 10px 28px rgba(31, 42, 36, 0.07);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(200, 168, 107, 0.2);
+      color: var(--green);
+      font-size: 1.35rem;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      color: var(--green);
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+      font-weight: 560;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .panel {
+      background: var(--green);
+      color: #fff;
+      border-radius: 30px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      letter-spacing: -0.055em;
+    }
+
+    .panel p {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1.05rem;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: rgba(255, 255, 255, 0.86);
+      font-weight: 700;
+    }
+
+    .check::before {
+      content: "✓";
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--tan);
+      color: #17130b;
+      font-size: 0.84rem;
+      font-weight: 950;
+      margin-top: 1px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 22px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .num {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--green);
+      color: var(--tan);
+      font-weight: 950;
+    }
+
+    .step h3 { color: var(--green); font-size: 1.1rem; margin-bottom: 6px; }
+    .step p { margin: 0; color: var(--muted); font-weight: 560; }
+
+    .cta {
+      background:
+        radial-gradient(circle at bottom left, rgba(200, 168, 107, 0.24), transparent 38%),
+        var(--green);
+      color: #fff;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      letter-spacing: -0.065em;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .cta p {
+      max-width: 680px;
+      margin: 22px auto 32px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1.12rem;
+      font-weight: 600;
+    }
+
+    .contact-box {
+      width: min(760px, 100%);
+      margin: 36px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      text-align: left;
+    }
+
+    .contact-item {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .contact-item span {
+      display: block;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 850;
+      margin-bottom: 6px;
+    }
+
+    .contact-item strong { color: #fff; }
+
+    footer {
+      background: #101512;
+      color: rgba(255, 255, 255, 0.66);
+      padding: 28px 0;
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .links { display: none; }
+      .hero-inner, .split { grid-template-columns: 1fr; }
+      .hero-inner { padding: 68px 0 76px; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+      .stats { grid-template-columns: 1fr; }
+      .contact-box { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(2.8rem, 14vw, 5rem); }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Brock Legacy Construction home">
+        <span class="mark">BLC</span>
+        <span>
+          Brock Legacy Construction
+          <small>Built right. Built to last.</small>
+        </span>
+      </a>
+
+      <nav class="links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">Construction • Remodeling • Repairs</span>
+          <h1>Quality work that protects your home, your budget, and your sanity.</h1>
+          <p>
+            Brock Legacy Construction helps homeowners and property owners plan, improve,
+            repair, and build with dependable communication and craftsmanship that does not
+            vanish the second the deposit clears. Revolutionary concept, apparently.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Request a Quote</a>
+            <a class="btn btn-secondary" href="#services">View Services</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Project highlight placeholder">
+          <div class="photo-placeholder">
+            <div>
+              <strong>Project photos coming soon</strong>
+              <span>Remodels, additions, repairs, and construction work.</span>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>Local</strong><span>Service-focused</span></div>
+            <div class="stat"><strong>Clean</strong><span>Professional work</span></div>
+            <div class="stat"><strong>Clear</strong><span>Honest estimates</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>Start simple, scope clearly, and build the right way. Below are placeholder services we can tune once the exact offer is locked.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">🏠</div>
+            <h3>Home Remodeling</h3>
+            <p>Kitchens, bathrooms, living spaces, finish upgrades, and practical improvements that make the property work better.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🧰</div>
+            <h3>Repairs & Improvements</h3>
+            <p>Reliable repair work, punch-list fixes, exterior updates, interior improvements, and project cleanup.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📐</div>
+            <h3>Additions & Buildouts</h3>
+            <p>Planning and construction support for additions, expansions, custom spaces, and property upgrades.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div class="panel">
+          <h2>A contractor site should earn trust fast.</h2>
+          <p>
+            This first version is intentionally lean: clear positioning, clear services, clear call-to-action.
+            Once we have real photos, service areas, phone/email, and testimonials, this page gets teeth.
+          </p>
+          <div class="checklist">
+            <div class="check">Professional first impression for brocklegacyconstruction.com</div>
+            <div class="check">Separate from Prestige Prints code, hosting, and backend</div>
+            <div class="check">Ready for Cloudflare Pages static deployment</div>
+          </div>
+        </div>
+
+        <div class="steps" id="process">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <h3>Tell us what you need</h3>
+              <p>Share the project type, location, timeline, and a few photos if available.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <h3>Get a clear estimate</h3>
+              <p>We review scope, materials, constraints, and the practical path forward.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <h3>Build with confidence</h3>
+              <p>Professional work, straightforward communication, and respect for the property.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <h2>Ready to start a project?</h2>
+        <p>
+          Send a message and we’ll follow up about your construction, remodeling, or repair project.
+          Replace these placeholders with the real phone and email when ready.
+        </p>
+        <a class="btn btn-primary" href="mailto:quote@brocklegacyconstruction.com">Email for a Quote</a>
+
+        <div class="contact-box">
+          <div class="contact-item">
+            <span>Email</span>
+            <strong>quote@brocklegacyconstruction.com</strong>
+          </div>
+          <div class="contact-item">
+            <span>Phone</span>
+            <strong>Coming soon</strong>
+          </div>
+          <div class="contact-item">
+            <span>Service Area</span>
+            <strong>Central Texas</strong>
+          </div>
+          <div class="contact-item">
+            <span>Website</span>
+            <strong>brocklegacyconstruction.com</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Brock Legacy Construction. All rights reserved.</span>
+      <span>Built for brocklegacyconstruction.com</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
