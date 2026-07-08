@@ -3,22 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brock Legacy Construction | Quality Construction & Remodeling</title>
-  <meta name="description" content="Brock Legacy Construction serves The Colony, TX and surrounding areas with general contracting, painting, handyman repairs, remodeling, flooring, lighting, landscaping, and more." />
-  <meta name="theme-color" content="#1f2a24" />
+  <title>Brock Legacy Construction | Remodeling & General Contracting in The Colony, TX</title>
+  <meta name="description" content="Brock Legacy Construction serves The Colony, TX and a 50-mile radius with general contracting, painting, handyman repairs, remodeling, flooring, lighting, landscaping, appliance installation, fixtures, and more." />
+  <meta name="theme-color" content="#080808" />
 
   <style>
     :root {
-      --green: #1f2a24;
-      --green-2: #314238;
-      --tan: #c8a86b;
-      --cream: #f7f2e8;
-      --paper: #fffdf8;
-      --ink: #1d1d1b;
-      --muted: #65625b;
-      --line: rgba(29, 29, 27, 0.12);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
-      --radius: 22px;
+      --black: #080808;
+      --charcoal: #141414;
+      --charcoal-2: #1f1f1f;
+      --gold: #c8a24a;
+      --gold-2: #e1bd63;
+      --white: #ffffff;
+      --offwhite: #f7f5ef;
+      --ink: #171717;
+      --muted: #676767;
+      --line: rgba(8, 8, 8, 0.12);
+      --line-light: rgba(255, 255, 255, 0.16);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+      --radius: 18px;
+      --max: 1160px;
     }
 
     * { box-sizing: border-box; }
@@ -29,31 +33,48 @@
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      background: var(--cream);
+      background: var(--offwhite);
       line-height: 1.55;
     }
 
     a { color: inherit; text-decoration: none; }
-
     img { max-width: 100%; display: block; }
 
     .container {
-      width: min(1120px, calc(100% - 40px));
+      width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
 
-    .topbar {
+    .top-strip {
+      background: var(--black);
+      color: rgba(255, 255, 255, 0.78);
+      border-bottom: 1px solid var(--line-light);
+      font-size: 0.88rem;
+    }
+
+    .top-strip .container {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .top-strip strong { color: var(--gold-2); }
+
+    .header {
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(16px);
-      background: rgba(31, 42, 36, 0.88);
-      color: #fff;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(8, 8, 8, 0.92);
+      color: var(--white);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line-light);
     }
 
     .nav {
-      min-height: 76px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -65,403 +86,544 @@
       align-items: center;
       gap: 14px;
       font-weight: 900;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
     }
 
     .mark {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       display: grid;
       place-items: center;
-      border: 2px solid var(--tan);
-      color: var(--tan);
+      border: 2px solid var(--gold);
+      color: var(--gold-2);
       font-weight: 950;
-      border-radius: 12px;
+      border-radius: 2px;
+      box-shadow: inset 0 0 0 4px rgba(200, 162, 74, 0.08);
     }
 
     .brand small {
       display: block;
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 0.76rem;
-      font-weight: 650;
-      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.74rem;
+      font-weight: 750;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
     .links {
       display: flex;
       align-items: center;
-      gap: 22px;
-      color: rgba(255, 255, 255, 0.84);
-      font-weight: 700;
-      font-size: 0.94rem;
+      gap: 24px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.92rem;
+      font-weight: 800;
     }
 
-    .links a:hover { color: #fff; }
+    .links a:hover { color: var(--gold-2); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 2px;
+      background: var(--gold);
+      color: #100d06;
+      font-weight: 950;
+    }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 48px;
-      padding: 0 20px;
-      border-radius: 999px;
-      font-weight: 850;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 2px;
+      font-weight: 950;
       border: 1px solid transparent;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.9rem;
     }
 
     .btn:hover { transform: translateY(-1px); }
 
     .btn-primary {
-      background: var(--tan);
-      color: #17130b;
-      box-shadow: 0 12px 30px rgba(200, 168, 107, 0.24);
+      background: var(--gold);
+      color: #111;
+      box-shadow: 0 16px 34px rgba(200, 162, 74, 0.26);
     }
 
-    .btn-primary:hover { background: #d6b777; }
+    .btn-primary:hover { background: var(--gold-2); }
 
-    .btn-secondary {
+    .btn-outline {
       background: transparent;
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.28);
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.34);
     }
 
-    .btn-secondary:hover { background: rgba(255, 255, 255, 0.08); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-2); }
 
     .hero {
       position: relative;
+      isolation: isolate;
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
       overflow: hidden;
       background:
-        radial-gradient(circle at top right, rgba(200, 168, 107, 0.26), transparent 34%),
-        linear-gradient(135deg, var(--green), #111815);
-      color: #fff;
+        linear-gradient(90deg, rgba(8, 8, 8, 0.96), rgba(8, 8, 8, 0.82) 48%, rgba(8, 8, 8, 0.54)),
+        radial-gradient(circle at 75% 24%, rgba(200, 162, 74, 0.2), transparent 30%),
+        linear-gradient(135deg, #0a0a0a, #242424);
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
+      z-index: -1;
       background-image:
         linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 82%);
-      pointer-events: none;
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 88%);
     }
 
-    .hero-inner {
-      position: relative;
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -12vw;
+      bottom: -16vw;
+      z-index: -1;
+      width: 52vw;
+      height: 52vw;
+      border: 1px solid rgba(200, 162, 74, 0.22);
+      transform: rotate(35deg);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 52px;
+      grid-template-columns: 1.05fr 0.75fr;
       align-items: center;
-      padding: 92px 0 96px;
+      gap: 60px;
+      padding: 92px 0;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      color: #f4d99d;
-      font-weight: 850;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--gold-2);
       font-size: 0.78rem;
-      margin-bottom: 18px;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
     }
 
     .eyebrow::before {
       content: "";
-      width: 36px;
+      width: 48px;
       height: 2px;
-      background: var(--tan);
+      background: var(--gold);
     }
 
-    h1, h2, h3 { line-height: 1.05; margin: 0; }
+    h1, h2, h3 { margin: 0; line-height: 1.04; }
 
     h1 {
-      font-size: clamp(3rem, 7vw, 6.6rem);
       max-width: 860px;
+      font-size: clamp(3.2rem, 7.8vw, 7.2rem);
       letter-spacing: -0.075em;
     }
 
-    .hero p {
-      max-width: 660px;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: clamp(1.08rem, 1.6vw, 1.28rem);
+    .hero-copy {
+      max-width: 700px;
       margin: 24px 0 34px;
+      color: rgba(255, 255, 255, 0.77);
+      font-size: clamp(1.08rem, 1.55vw, 1.28rem);
+      font-weight: 560;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
       align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .hero-card {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: var(--radius);
-      padding: 24px;
       box-shadow: var(--shadow);
+      padding: 22px;
     }
 
-    .photo-placeholder {
+    .project-tile {
       min-height: 430px;
-      border-radius: calc(var(--radius) - 6px);
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 26px;
       background:
-        linear-gradient(135deg, rgba(200,168,107,0.84), rgba(49,66,56,0.92)),
-        repeating-linear-gradient(45deg, transparent 0 12px, rgba(255,255,255,0.06) 12px 24px);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+        linear-gradient(to top, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.18)),
+        repeating-linear-gradient(135deg, #343434 0 16px, #242424 16px 32px);
+      border: 1px solid rgba(200, 162, 74, 0.28);
     }
 
-    .photo-placeholder strong {
-      font-size: 1.45rem;
-      line-height: 1.15;
+    .project-tile span {
+      color: var(--gold-2);
+      font-size: 0.78rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
     }
 
-    .photo-placeholder span {
+    .project-tile strong {
       display: block;
-      margin-top: 12px;
-      color: rgba(255, 255, 255, 0.78);
-      font-weight: 700;
+      margin-top: 10px;
+      font-size: 1.65rem;
+      line-height: 1.1;
     }
 
-    .stats {
+    .project-tile p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 650;
+    }
+
+    .trust-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 14px;
+      gap: 1px;
+      background: var(--gold);
     }
 
-    .stat {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 18px;
-      padding: 16px;
+    .trust-item {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 26px 22px;
+      text-align: center;
     }
 
-    .stat strong {
+    .trust-item strong {
       display: block;
-      color: #fff;
-      font-size: 1.35rem;
+      color: var(--gold-2);
+      font-size: 1.5rem;
       line-height: 1;
+      margin-bottom: 8px;
     }
 
-    .stat span {
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 0.82rem;
+    .trust-item span {
+      color: rgba(255, 255, 255, 0.72);
       font-weight: 750;
+      font-size: 0.9rem;
     }
 
-    section { padding: 82px 0; }
+    section { padding: 88px 0; }
 
     .section-head {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 34px;
+      gap: 28px;
+      margin-bottom: 38px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--gold);
     }
 
     .section-head h2 {
-      font-size: clamp(2.2rem, 4vw, 4rem);
-      letter-spacing: -0.055em;
-      color: var(--green);
+      font-size: clamp(2.35rem, 4.8vw, 4.7rem);
+      letter-spacing: -0.06em;
+      color: var(--black);
     }
 
     .section-head p {
-      max-width: 480px;
-      color: var(--muted);
+      max-width: 510px;
       margin: 0;
-      font-weight: 600;
+      color: var(--muted);
+      font-weight: 650;
     }
 
-    .grid-3 {
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .card {
-      background: var(--paper);
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+      padding: 30px;
+      background: var(--white);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: 0 10px 28px rgba(31, 42, 36, 0.07);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
     }
 
-    .icon {
-      width: 52px;
-      height: 52px;
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--gold);
+    }
+
+    .service-card::after {
+      content: attr(data-num);
+      position: absolute;
+      right: 18px;
+      bottom: -8px;
+      color: rgba(8, 8, 8, 0.045);
+      font-size: 6rem;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
       display: grid;
       place-items: center;
-      border-radius: 16px;
-      background: rgba(200, 168, 107, 0.2);
-      color: var(--green);
+      margin-bottom: 24px;
+      background: var(--black);
+      color: var(--gold-2);
       font-size: 1.35rem;
-      margin-bottom: 20px;
     }
 
-    .card h3 {
-      color: var(--green);
-      font-size: 1.25rem;
+    .service-card h3 {
+      color: var(--black);
+      font-size: 1.35rem;
       margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
     }
 
-    .card p {
-      color: var(--muted);
+    .service-card p {
       margin: 0;
-      font-weight: 560;
+      color: var(--muted);
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
     }
 
-    .split {
+    .dark-section {
+      background: var(--black);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dark-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(200, 162, 74, 0.18), transparent 28%),
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: auto, 58px 58px, 58px 58px;
+      pointer-events: none;
+    }
+
+    .dark-section .container { position: relative; }
+
+    .about-grid {
       display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 42px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 52px;
       align-items: center;
     }
 
-    .panel {
-      background: var(--green);
-      color: #fff;
-      border-radius: 30px;
-      padding: 42px;
-      box-shadow: var(--shadow);
+    .about-panel {
+      border-left: 5px solid var(--gold);
+      padding: 12px 0 12px 28px;
     }
 
-    .panel h2 {
-      font-size: clamp(2rem, 4vw, 3.7rem);
-      letter-spacing: -0.055em;
+    .about-panel h2 {
+      font-size: clamp(2.3rem, 4.7vw, 4.9rem);
+      letter-spacing: -0.065em;
     }
 
-    .panel p {
-      color: rgba(255, 255, 255, 0.76);
-      font-size: 1.05rem;
+    .about-panel p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 1.08rem;
+      font-weight: 600;
     }
 
-    .checklist {
+    .check-grid {
       display: grid;
-      gap: 12px;
-      margin-top: 26px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
     }
 
     .check {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-weight: 800;
       color: rgba(255, 255, 255, 0.86);
-      font-weight: 700;
     }
 
     .check::before {
       content: "✓";
-      flex: 0 0 auto;
+      display: inline-grid;
+      place-items: center;
       width: 24px;
       height: 24px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--tan);
-      color: #17130b;
-      font-size: 0.84rem;
+      margin-right: 10px;
+      background: var(--gold);
+      color: #111;
       font-weight: 950;
-      margin-top: 1px;
     }
 
-    .steps {
+    .process-grid {
       display: grid;
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .step {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 16px;
-      align-items: start;
-      padding: 22px;
-      background: var(--paper);
+    .process-card {
+      padding: 30px;
+      background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 20px;
+      min-height: 230px;
     }
 
-    .num {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: var(--green);
-      color: var(--tan);
+    .process-number {
+      color: var(--gold);
+      font-size: 3.3rem;
       font-weight: 950;
+      line-height: 1;
+      margin-bottom: 20px;
     }
 
-    .step h3 { color: var(--green); font-size: 1.1rem; margin-bottom: 6px; }
-    .step p { margin: 0; color: var(--muted); font-weight: 560; }
-
-    .cta {
-      background:
-        radial-gradient(circle at bottom left, rgba(200, 168, 107, 0.24), transparent 38%),
-        var(--green);
-      color: #fff;
-      text-align: center;
+    .process-card h3 {
+      font-size: 1.32rem;
+      color: var(--black);
+      margin-bottom: 10px;
     }
 
-    .cta h2 {
-      font-size: clamp(2.4rem, 5vw, 5rem);
-      letter-spacing: -0.065em;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .cta p {
-      max-width: 680px;
-      margin: 22px auto 32px;
-      color: rgba(255, 255, 255, 0.76);
-      font-size: 1.12rem;
+    .process-card p {
+      margin: 0;
+      color: var(--muted);
       font-weight: 600;
     }
 
-    .contact-box {
-      width: min(760px, 100%);
-      margin: 36px auto 0;
+    .quote-band {
+      padding: 0;
+      background: var(--offwhite);
+    }
+
+    .quote-inner {
+      transform: translateY(50%);
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 34px;
+      background: var(--gold);
+      color: #111;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-inner h2 {
+      font-size: clamp(1.7rem, 3vw, 3rem);
+      letter-spacing: -0.045em;
+    }
+
+    .quote-inner p {
+      margin: 8px 0 0;
+      font-weight: 750;
+      color: rgba(0, 0, 0, 0.68);
+    }
+
+    .quote-inner .btn {
+      background: var(--black);
+      color: var(--white);
+      box-shadow: none;
+      white-space: nowrap;
+    }
+
+    .contact {
+      padding-top: 150px;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      letter-spacing: -0.065em;
+    }
+
+    .contact p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.08rem;
+      font-weight: 600;
+    }
+
+    .contact-list {
+      display: grid;
       gap: 14px;
-      text-align: left;
     }
 
     .contact-item {
-      padding: 20px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.13);
     }
 
     .contact-item span {
-      display: block;
-      color: rgba(255, 255, 255, 0.58);
-      font-size: 0.82rem;
+      color: var(--gold-2);
+      font-size: 0.78rem;
+      font-weight: 950;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 850;
-      margin-bottom: 6px;
+      letter-spacing: 0.13em;
     }
 
-    .contact-item strong { color: #fff; }
+    .contact-item strong {
+      color: var(--white);
+      word-break: break-word;
+    }
 
     footer {
-      background: #101512;
-      color: rgba(255, 255, 255, 0.66);
-      padding: 28px 0;
+      background: #050505;
+      color: rgba(255, 255, 255, 0.62);
+      padding: 30px 0;
       font-size: 0.92rem;
     }
 
@@ -472,27 +634,51 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 940px) {
       .links { display: none; }
-      .hero-inner, .split { grid-template-columns: 1fr; }
-      .hero-inner { padding: 68px 0 76px; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .section-head { align-items: start; flex-direction: column; }
-      .stats { grid-template-columns: 1fr; }
-      .contact-box { grid-template-columns: 1fr; }
-      h1 { font-size: clamp(2.8rem, 14vw, 5rem); }
+      .hero { min-height: auto; }
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .quote-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-grid { padding: 70px 0; gap: 34px; }
+      .services-grid,
+      .process-grid,
+      .check-grid,
+      .trust-row {
+        grid-template-columns: 1fr;
+      }
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+      .quote-inner {
+        transform: translateY(36%);
+      }
+      .contact { padding-top: 130px; }
+      .contact-item { grid-template-columns: 1fr; gap: 6px; }
+      h1 { font-size: clamp(2.85rem, 13vw, 5rem); }
     }
   </style>
 </head>
 
 <body>
-  <header class="topbar">
+  <div class="top-strip">
+    <div class="container">
+      <span><strong>Serving The Colony, TX</strong> and a 50-mile radius</span>
+      <span><a href="tel:+19402792593">Call (940) 279-2593</a> · <a href="mailto:carlbrock6285@outlook.com">carlbrock6285@outlook.com</a></span>
+    </div>
+  </div>
+
+  <header class="header">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Brock Legacy Construction home">
         <span class="mark">BLC</span>
         <span>
           Brock Legacy Construction
-          <small>Built right. Built to last.</small>
+          <small>Remodeling · Repairs · Contracting</small>
         </span>
       </a>
 
@@ -500,132 +686,182 @@
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#process">Process</a>
-        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="tel:+19402792593">Call Now</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-inner">
+      <div class="container hero-grid">
         <div>
-          <span class="eyebrow">The Colony, TX • 50-Mile Service Radius</span>
-          <h1>General contracting, repairs, remodels, and punch-list work done right.</h1>
-          <p>
-            Brock Legacy Construction helps homeowners and property owners across The Colony and surrounding North Texas communities tackle repairs, remodels, installations, painting, flooring, fixtures, lighting, landscaping, and general contracting work without the usual contractor runaround. Revolutionary concept, apparently.
+          <span class="eyebrow">General Contracting in North Texas</span>
+          <h1>Remodeling, repairs, and finish work built with pride.</h1>
+          <p class="hero-copy">
+            Brock Legacy Construction helps homeowners and property owners across The Colony and surrounding North Texas communities handle repairs, remodels, painting, flooring, lighting, fixtures, landscaping, appliance installs, and the projects that never quite fit in one neat box.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Request a Quote</a>
-            <a class="btn btn-secondary" href="#services">View Services</a>
+            <a class="btn btn-primary" href="tel:+19402792593">Request a Quote</a>
+            <a class="btn btn-outline" href="#services">Explore Services</a>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Project highlight placeholder">
-          <div class="photo-placeholder">
-            <div>
-              <strong>Project photos coming soon</strong>
-              <span>Serving The Colony, TX and a 50-mile radius.</span>
-            </div>
-          </div>
-          <div class="stats">
-            <div class="stat"><strong>Local</strong><span>Service-focused</span></div>
-            <div class="stat"><strong>Clean</strong><span>Professional work</span></div>
-            <div class="stat"><strong>Clear</strong><span>Honest estimates</span></div>
+        <aside class="hero-card" aria-label="Service highlight">
+          <div class="project-tile">
+            <span>Project photos coming soon</span>
+            <strong>Clean work. Clear communication. No disappearing act.</strong>
+            <p>Serving The Colony, TX and customers within a 50-mile radius.</p>
           </div>
         </aside>
       </div>
     </section>
 
+    <div class="trust-row" aria-label="Company highlights">
+      <div class="trust-item"><strong>50 mi</strong><span>Service radius from The Colony</span></div>
+      <div class="trust-item"><strong>Full</strong><span>Repair, remodel & contracting support</span></div>
+      <div class="trust-item"><strong>Direct</strong><span>Call or email for project estimates</span></div>
+    </div>
+
     <section id="services">
       <div class="container">
         <div class="section-head">
-          <h2>Services</h2>
+          <div>
+            <span class="section-kicker">Our Services</span>
+            <h2>From small fixes to full room upgrades.</h2>
+          </div>
           <p>Practical construction and property improvement services for homeowners, landlords, and small businesses around The Colony, TX.</p>
         </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="icon">🏠</div>
+        <div class="services-grid">
+          <article class="service-card" data-num="01">
+            <div class="service-icon">🏠</div>
             <h3>Repair & Remodel</h3>
-            <p>General contracting, handyman repairs, remodel projects, punch-list fixes, trim work, closets, fixtures, and practical upgrades.</p>
+            <p>General contracting, handyman repairs, remodel projects, punch-list fixes, closet work, trim, fixtures, and practical upgrades.</p>
           </article>
 
-          <article class="card">
-            <div class="icon">🧰</div>
-            <h3>Painting, Flooring & Finishes</h3>
-            <p>Interior updates including painting, trim, fixture swaps, lighting, and flooring installation. No carpet.</p>
+          <article class="service-card" data-num="02">
+            <div class="service-icon">🎨</div>
+            <h3>Painting & Finishes</h3>
+            <p>Interior painting, trim details, fixture upgrades, finish repairs, and the visual improvements that make a property feel complete.</p>
           </article>
 
-          <article class="card">
-            <div class="icon">📐</div>
-            <h3>Installations & Property Help</h3>
-            <p>Appliance installation, basic landscaping, lighting, closet improvements, and basic junk removal.</p>
+          <article class="service-card" data-num="03">
+            <div class="service-icon">🪚</div>
+            <h3>Flooring Installation</h3>
+            <p>Hard-surface flooring installation and related finish work. No carpet — because we are building a business, not a dust museum.</p>
+          </article>
+
+          <article class="service-card" data-num="04">
+            <div class="service-icon">💡</div>
+            <h3>Lighting & Fixtures</h3>
+            <p>Lighting updates, fixture installation, appliance installation, small upgrades, and functional improvements around the home.</p>
+          </article>
+
+          <article class="service-card" data-num="05">
+            <div class="service-icon">🌿</div>
+            <h3>Landscaping Help</h3>
+            <p>Basic landscaping support, outdoor cleanups, minor exterior improvements, and curb-appeal projects.</p>
+          </article>
+
+          <article class="service-card" data-num="06">
+            <div class="service-icon">🧹</div>
+            <h3>Junk Removal</h3>
+            <p>Basic junk removal tied to repairs, remodels, property cleanup, or getting a space ready for the next project.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <div class="container split">
-        <div class="panel">
-          <h2>A contractor site should earn trust fast.</h2>
+    <section class="dark-section" id="about">
+      <div class="container about-grid">
+        <div class="about-panel">
+          <span class="section-kicker">Built on legacy</span>
+          <h2>Professional work without the contractor runaround.</h2>
           <p>
-            This first version is intentionally lean: clear positioning, clear services, clear call-to-action.
-            Once we have real photos, project examples, licensing/insurance language, and testimonials, this page gets teeth.
+            The first job of this site is simple: earn trust quickly, show what Brock Legacy Construction handles, and make it easy for customers to call. Once we add real project photos, testimonials, and license/insurance language, this becomes much sharper.
           </p>
-          <div class="checklist">
-            <div class="check">Professional first impression for brocklegacyconstruction.com</div>
-            <div class="check">Separate from Prestige Prints code, hosting, and backend</div>
-            <div class="check">Ready for Cloudflare Pages static deployment</div>
-          </div>
         </div>
 
-        <div class="steps" id="process">
-          <div class="step">
-            <div class="num">1</div>
-            <div>
-              <h3>Tell us what you need</h3>
-              <p>Share the project type, location, timeline, and a few photos if available.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">2</div>
-            <div>
-              <h3>Get a clear estimate</h3>
-              <p>We review scope, materials, constraints, and the practical path forward.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="num">3</div>
-            <div>
-              <h3>Build with confidence</h3>
-              <p>Professional work, straightforward communication, and respect for the property.</p>
-            </div>
-          </div>
+        <div class="check-grid">
+          <div class="check">General contracting support</div>
+          <div class="check">Repair and remodel work</div>
+          <div class="check">Painting and finish upgrades</div>
+          <div class="check">Fixtures and appliance installs</div>
+          <div class="check">Flooring, trim, and closet projects</div>
+          <div class="check">Local service across North Texas</div>
         </div>
       </div>
     </section>
 
-    <section class="cta" id="contact">
+    <section id="process">
       <div class="container">
-        <h2>Ready to start a project?</h2>
-        <p>
-          Send a message and we’ll follow up about your construction, remodeling, or repair project.
-          Call or email to discuss the project scope, location, timeline, and next steps.
-        </p>
-        <a class="btn btn-primary" href="tel:+19402792593">Call (940) 279-2593</a>
-
-        <div class="contact-box">
-          <div class="contact-item">
-            <span>Email</span>
-            <strong><a href="mailto:carlbrock6285@outlook.com">carlbrock6285@outlook.com</a></strong>
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Our Process</span>
+            <h2>Simple, direct, and built around the scope.</h2>
           </div>
+          <p>A clean process beats vague promises. Every project starts with what needs to be done, where it is, and what the customer expects.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-number">01</div>
+            <h3>Discuss the project</h3>
+            <p>Call or email with the project type, location, rough timeline, and photos if you have them.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">02</div>
+            <h3>Review the scope</h3>
+            <p>We review the job, materials, access, expectations, and the practical path forward.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">03</div>
+            <h3>Get it done right</h3>
+            <p>Professional work, straightforward communication, and respect for the property from start to finish.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band" aria-label="Quote callout">
+      <div class="container">
+        <div class="quote-inner">
+          <div>
+            <h2>Have a repair, remodel, or property project?</h2>
+            <p>Call Brock Legacy Construction and get the conversation started.</p>
+          </div>
+          <a class="btn" href="tel:+19402792593">Call (940) 279-2593</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <span class="section-kicker">Contact</span>
+          <h2>Ready to start?</h2>
+          <p>
+            Send the project details by email or call directly. Include the project location, a few notes about what needs to be done, and photos if available.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+19402792593">Call Now</a>
+            <a class="btn btn-outline" href="mailto:carlbrock6285@outlook.com">Email Carl</a>
+          </div>
+        </div>
+
+        <div class="contact-list">
           <div class="contact-item">
             <span>Phone</span>
             <strong><a href="tel:+19402792593">(940) 279-2593</a></strong>
           </div>
           <div class="contact-item">
-            <span>Service Area</span>
+            <span>Email</span>
+            <strong><a href="mailto:carlbrock6285@outlook.com">carlbrock6285@outlook.com</a></strong>
+          </div>
+          <div class="contact-item">
+            <span>Location</span>
             <strong>The Colony, TX + 50-mile radius</strong>
           </div>
           <div class="contact-item">
@@ -640,7 +876,7 @@
   <footer>
     <div class="container footer-inner">
       <span>© <span id="year"></span> Brock Legacy Construction. All rights reserved.</span>
-      <span>The Colony, TX • 50-mile service radius</span>
+      <span>The Colony, TX • Remodeling · Repairs · General Contracting</span>
     </div>
   </footer>
 
